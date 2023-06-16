@@ -11,17 +11,29 @@ find_package(moveit_ros_planning_interface REQUIRED)
 find_package(rclcpp REQUIRED)
 
 add_executable(pm_moveit_tests src/pm_moveit_tests.cpp)
+add_executable(pm_spawn_object src/pm_spawn_object.cpp)
+
 target_include_directories(pm_moveit_tests PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
+
 target_compile_features(pm_moveit_tests PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+
 ament_target_dependencies(
   pm_moveit_tests
   "moveit_ros_planning_interface"
   "rclcpp"
 )
 
-install(TARGETS pm_moveit_tests
+ament_target_dependencies(
+  pm_spawn_object
+  "moveit_ros_planning_interface"
+  "rclcpp"
+)
+
+install(TARGETS 
+  pm_moveit_tests 
+  pm_spawn_object
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)

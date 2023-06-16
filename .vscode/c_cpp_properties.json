@@ -49,7 +49,11 @@
         "/home/niklas/ros2_ws/src/match_pm_robot/pm_hardware_interface/include/**",
         "/home/niklas/ros2_ws/src/my_cpp_pkg/include/**",
         "/home/niklas/ros2_ws/src/test_node_1/include/**",
-        "/usr/include/**"
+        "/home/mll/ws_moveit2/install/srdfdom/**",
+        "/usr/include/**",
+        "/home/mll/ws_moveit2/install/moveit_core/include/**",
+        "/home/mll/ws_moveit2/install/moveit_ros_planning_interface/include/**",
+        "/home/mll/ws_moveit2/install/moveit_ros_planning/include/**"
       ],
       "name": "ROS",
       "intelliSenseMode": "gcc-x64",
